@@ -1,4 +1,4 @@
-var USER_DATA = {
+const USER_DATA = {
     name: 'Jeremias Pereira',
     username: 'jeeeremias',
     image: 'https://avatars0.githubusercontent.com/u/9812493?v=3&s=460'
@@ -17,45 +17,33 @@ class HelloWorld extends React.Component {
     }
 };
 
-class ProfilePic extends React.Component {
-    render () {
-        return <img src={this.props.imageUrl} style={{height: 100, width: 100}} />
-    }
+const Avatar = ({ name, username, image }) => {
+  return (
+    <div>
+      <ProfilePic imageUrl={image} />
+      <ProfileName name={name} />
+      <ProfileLink username={username} />
+    </div>
+  )
 };
 
-class ProfileLink extends React.Component {
-    render () {
-        return (
-            <div>
-                <a href={'https://www.github.com/' + this.props.username}>
-                    {this.props.username}
-                </a>
-            </div>
-        )
-    }
-};
+const ProfilePic = ({imageUrl}) => (
+  <img src={imageUrl} style={{height: 100, width: 100}} />
+);
 
-class ProfileName extends React.Component {
-    render () {
-        return (
-            <div>{this.props.name}</div>
-        )
-    }
-};
+const ProfileLink = ({username}) => (
+  <div>
+    <a href={`https://www.github.com/${username}`}>
+      {username}
+    </a>
+  </div>
+);
 
-class Avatar extends React.Component {
-    render () {
-        return (
-            <div>
-                <ProfilePic imageUrl={this.props.user.image} />
-                <ProfileName name={this.props.user.name} />
-                <ProfileLink username={this.props.user.username} />
-            </div>
-        )
-    }
-}
+const ProfileName = ({name}) => (
+  <div>{name}</div>
+);
 
 ReactDOM.render(
-    <Avatar user={USER_DATA} />,
-    document.getElementById('app')
-)
+  <Avatar { ...USER_DATA } />,
+  document.getElementById('app')
+);
