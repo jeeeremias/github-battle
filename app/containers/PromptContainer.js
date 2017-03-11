@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import styles from '../styles/index'
 
 class PromptContainer extends React.Component {
@@ -9,6 +9,7 @@ class PromptContainer extends React.Component {
             username: ''
         };
         this.onUpdateUser = this.onUpdateUser.bind(this);
+        this.onSubmitUser = this.onSubmitUser.bind(this);
     }
 
     onUpdateUser (e) {
@@ -17,12 +18,28 @@ class PromptContainer extends React.Component {
         })
     }
 
+    onSubmitUser (e) {
+        e.preventDefault();
+        var username = this.state.username;
+        this.setState({
+            username: ''
+        });
+
+        if (this.props.routeParams.playerOne) {
+            console.log(this.context);
+            // go to /battle
+        } else {
+            console.log(this.context);
+            // go to /playerTwo
+        }
+    }
+
     render () {
         return (
             <div className='jumbotron col-sm-6 col-sm-offset-3 text-center' style={styles.transparentBg}>
                 <h1>{this.props.route.header}</h1>
                 <div className='col-sm-12'>
-                    <form>
+                    <form onSubmit={this.onSubmitUser}>
                         <div className='form-group'>
                             <input
                                 className='form-control'
@@ -44,5 +61,9 @@ class PromptContainer extends React.Component {
         )
     }
 }
+
+PromptContainer.contextTypes = {
+    router: React.PropTypes.object.isRequired
+};
 
 export default PromptContainer;
