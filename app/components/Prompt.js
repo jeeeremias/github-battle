@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 
 import styles from '../styles/index'
 
@@ -25,6 +25,13 @@ const Prompt = ({onSubmitUser, onUpdateUser, header, username}) => (
             </form>
         </div>
     </div>
-)
+);
+
+Prompt.propTypes = {
+    header: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+    onUpdateUser: PropTypes.func.isRequired,
+    onSubmitUser: PropTypes.func.isRequired
+}
 
 export default Prompt;
