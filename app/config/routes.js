@@ -10,7 +10,7 @@ const routes = (
         <Route path="/" component={Main}>
             <IndexRoute component={Home}/>
             <Route path="playerOne" header="Player One" component={PromptComponent}/>
-            <Route path="playerTwo/:playerOne" header="Player One" component={PromptComponent}/>
+            <Route path="playerTwo/:playerOne" header="Player Two" component={PromptComponent}/>
         </Route>
     </Router>
 );
