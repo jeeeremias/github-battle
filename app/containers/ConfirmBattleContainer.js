@@ -11,6 +11,11 @@ class ConfirmBattleContainer extends React.Component {
         };
     }
 
+    componentDidMount () {
+        const query = this.props.location.query;
+        // fetch info from github
+    }
+
     render () {
         return (
             <ConfirmBattle/>
