@@ -11,10 +11,22 @@ class ConfirmBattleContainer extends React.Component {
         };
     }
 
+    componentWillMount () {
+        console.log('componentWillMount');
+    }
+
     componentDidMount () {
         const query = this.props.location.query;
         // fetch info from github
 
+    }
+
+    componentWillReceiveProps () {
+        console.log('componentWillReceiveProps');
+    }
+
+    componentWillUnmount () {
+        console.log('componentWillUnmount');
     }
 
     render () {
