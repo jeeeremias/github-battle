@@ -1,8 +1,10 @@
 import React from 'react';
 
-const ConfirmBattle = (props) => {
+const ConfirmBattle = ({isLoading}) => {
     return (
-        <div>Confirm battle!</div>
+        isLoading === true
+            ? <p>LOADING!</p>
+            : <p>CONFIRM BATTLE!</p>
     )
 };
 

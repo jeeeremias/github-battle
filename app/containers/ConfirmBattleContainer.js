@@ -7,18 +7,21 @@ class ConfirmBattleContainer extends React.Component {
         super(props);
         this.state = {
             isLoading: true,
-            playerInfo: []
+            playersInfo: []
         };
     }
 
     componentDidMount () {
         const query = this.props.location.query;
         // fetch info from github
+
     }
 
     render () {
         return (
-            <ConfirmBattle/>
+            <ConfirmBattle 
+                isLoading={this.state.isLoading}
+                playersInfo={this.state.playersInfo}/>
         )
     }
 };
