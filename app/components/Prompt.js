@@ -1,6 +1,6 @@
-import React, {PropTypes} from 'react'
+import React, {PropTypes} from 'react';
 
-import styles from '../styles/index'
+import styles from '../styles/index';
 
 const Prompt = ({onSubmitUser, onUpdateUser, header, username}) => (
     <div className='jumbotron col-sm-6 col-sm-offset-3 text-center' style={styles.transparentBg}>
@@ -32,6 +32,6 @@ Prompt.propTypes = {
     username: PropTypes.string.isRequired,
     onUpdateUser: PropTypes.func.isRequired,
     onSubmitUser: PropTypes.func.isRequired
-}
+};
 
 export default Prompt;

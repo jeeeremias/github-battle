@@ -1,5 +1,5 @@
-import React, {PropTypes} from 'react'
-import Prompt from '../components/Prompt'
+import React, {PropTypes} from 'react';
+import Prompt from '../components/Prompt';
 
 class PromptContainer extends React.Component {
     

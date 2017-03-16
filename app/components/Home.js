@@ -2,13 +2,13 @@ const USER_DATA = {
     name: 'Jeremias Pereira',
     username: 'jeeeremias',
     image: 'https://avatars0.githubusercontent.com/u/9812493?v=3&s=460'
-}
+};
 
-import React from 'react'
-import {Link} from 'react-router'
+import React from 'react';
+import {Link} from 'react-router';
 
-import Avatar from './Github'
-import styles from '../styles/index'
+import Avatar from './Github';
+import styles from '../styles/index';
 
 const Home = () => (
     <div>

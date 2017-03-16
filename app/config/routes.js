@@ -1,9 +1,9 @@
-import React from 'react'
-import {Route, Router, IndexRoute, hashHistory} from 'react-router'
+import React from 'react';
+import {Route, Router, IndexRoute, hashHistory} from 'react-router';
 
-import Main from '../components/Main'
-import Home from '../components/Home'
-import PromptComponent from '../containers/PromptContainer'
+import Main from '../components/Main';
+import Home from '../components/Home';
+import PromptComponent from '../containers/PromptContainer';
 
 const routes = (
     <Router history={hashHistory}>
