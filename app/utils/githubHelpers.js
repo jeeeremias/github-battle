@@ -9,13 +9,13 @@ function getUserInfo (username) {
 }
 
 const helpers = {
-    getPlayersInfo: function(players) {
-        return axios.all(players.map((username) => (
+    getPlayersInfo: (players) => (
+        axios.all(players.map((username) => (
             getUserInfo(username)
         ))).then((info) => (
             console.log('INFO', info)
         ))
-    }
+    )
 }
 
 export default helpers;
