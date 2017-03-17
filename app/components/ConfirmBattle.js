@@ -1,10 +1,14 @@
 import React from 'react';
 
-const ConfirmBattle = ({isLoading}) => {
+function puke (object) {
+    return <pre>{JSON.stringify(object, null, ' ')}</pre>
+}
+
+const ConfirmBattle = (props) => {
     return (
-        isLoading === true
+        props.isLoading === true
             ? <p>LOADING!</p>
-            : <p>CONFIRM BATTLE!</p>
+            : <div>CONFIRM BATTLE!: {puke(props)}</div>
     )
 };
 
