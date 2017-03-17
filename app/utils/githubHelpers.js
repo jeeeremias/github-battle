@@ -16,6 +16,8 @@ const helpers = {
             info.map((user) => (
                 user.data
             ))
+        )).catch((err) => (
+            console.warn('Error in getPlayersInfo', err)
         ))
     )
 }

@@ -10,6 +10,11 @@ class ConfirmBattleContainer extends React.Component {
             isLoading: true,
             playersInfo: []
         };
+
+        this.componentWillMount = this.componentWillMount.bind(this);
+        this.componentDidMount = this.componentDidMount.bind(this);
+        this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this);
+        this.componentWillUnmount = this.componentWillUnmount.bind(this);
     }
 
     componentWillMount () {
@@ -18,10 +23,12 @@ class ConfirmBattleContainer extends React.Component {
 
     componentDidMount () {
         const query = this.props.location.query;
-        githubHelpers.getPlayersInfo([query.playerOne, query.playerTwo])
-            .then((players) => (
-                console.log('PLAYERS', players)
-            ))
+        githubHelpers.getPlayersInfo([query.playerOne, query.playerTwo]).then((players) => (
+            this.setState({
+                isLoading: false,
+                playersInfo: [players[0], players[1]]
+            })
+        ))
 
     }
 
