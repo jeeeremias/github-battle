@@ -13,7 +13,9 @@ const helpers = {
         axios.all(players.map((username) => (
             getUserInfo(username)
         ))).then((info) => (
-            console.log('INFO', info)
+            info.map((user) => (
+                user.data
+            ))
         ))
     )
 }
