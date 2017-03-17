@@ -15,6 +15,7 @@ class ConfirmBattleContainer extends React.Component {
         this.componentDidMount = this.componentDidMount.bind(this);
         this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this);
         this.componentWillUnmount = this.componentWillUnmount.bind(this);
+        this.handleInitiateBattle = this.handleInitiateBattle.bind(this);
     }
 
     componentWillMount () {
@@ -40,10 +41,20 @@ class ConfirmBattleContainer extends React.Component {
         console.log('componentWillUnmount');
     }
 
+    handleInitiateBattle () {
+        this.context.router.push({
+            pathname: '/results',
+            state: {
+                playersInfo: this.state.playersInfo
+            }
+        })
+    }
+
     render () {
         return (
             <ConfirmBattle 
                 isLoading={this.state.isLoading}
+                onInitiateBattle={this.handleInitiateBattle}
                 playersInfo={this.state.playersInfo}/>
         )
     }
