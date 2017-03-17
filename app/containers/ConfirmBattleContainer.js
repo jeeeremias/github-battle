@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 
-import ConfirmBattle from '../components/ConfirmBattle'
+import ConfirmBattle from '../components/ConfirmBattle';
+import githubHelpers from '../utils/githubHelpers'
 
 class ConfirmBattleContainer extends React.Component {
     constructor (props) {
@@ -17,7 +18,7 @@ class ConfirmBattleContainer extends React.Component {
 
     componentDidMount () {
         const query = this.props.location.query;
-        // fetch info from github
+        githubHelpers.getPlayersInfo([query.playerOne, query.playerTwo]);
 
     }
 
