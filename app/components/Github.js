@@ -11,7 +11,7 @@ const Link = ({children, href}) => {
 
   return (
     <span
-      style={{color: 'blue', cursor: 'pointer'}}
+      style={{color: "blue", cursor: "pointer"}}
       onClick={changeURL}>
       {children}
     </span>
