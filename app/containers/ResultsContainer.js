@@ -17,7 +17,10 @@ class ResultsContainer extends React.Component {
 
     render () {
         return (
-                <Results isLoading={this.props.isLoading} scores={this.state.scores} />
+                <Results
+                    isLoading={this.props.isLoading}
+                    scores={this.state.scores}
+                    playersInfo={this.props.location.state.playersInfo} />
         )
     }
 }
