@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Results from '../components/Results';
+import githubHelpers from '../utils/githubHelpers';
 
 class ResultsContainer extends React.Component {
     constructor (props) {
@@ -12,7 +13,13 @@ class ResultsContainer extends React.Component {
     }
 
     componentDidMount () {
-       console.log(this.props.location.state.playersInfo);
+        githubHelpers.battle(this.props.location.state.playersInfo)
+            .then((scores) => {
+                this.setState({
+                    scores: scores,
+                    isLoading: false
+                })
+            })
     }
 
     render () {

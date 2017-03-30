@@ -1,14 +1,27 @@
 import React, {PropTypes} from 'react';
 
-const puke = (obj) => (
-    <pre>{JSON.stringify(obj, 2, " ")}</pre>
-)
+import styles from '../styles/index';
+import UserDetails from './UserDetails';
+import UserDetailsWrapper from './UserDetailsWrapper';
 
-const Results = (props) => (
-    <div>
-        Results: {puke(props)}
-    </div>
-);
+const Results = (props) => {
+    const winningIndex = props.scores[0] > props.scores[1] ? 0 : 1;
+    const losingIndex = winningIndex === 0 ? 1 : 0;
+
+    return (
+        <div className='jumbotron col-sm-12 text-center' style={styles.transparentBg}>
+            <h1>Results</h1>
+            <div className='col-sm-8 col-sm-offset-2'>
+                <UserDetailsWrapper header='Winner'>
+                    <UserDetails score={props.scores[winningIndex]} info={props.playersInfo[winningIndex]}/>
+                </UserDetailsWrapper>
+                <UserDetailsWrapper header='Loser'>
+                    <UserDetails score={props.scores[losingIndex]} info={props.playersInfo[losingIndex]}/>
+                </UserDetailsWrapper>
+            </div>
+        </div>
+    )
+}
 
 Results.protoTypes = {
     isLoading: PropTypes.bool.isRequired,
