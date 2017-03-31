@@ -5,6 +5,7 @@ import styles from '../styles/index';
 import UserDetails from './UserDetails';
 import UserDetailsWrapper from './UserDetailsWrapper';
 import MainContainer from './MainContainer';
+import Loading from './Loading';
 
 function StartOver () {
     return (
@@ -19,7 +20,7 @@ function StartOver () {
 const Results = (props) => {
     if (props.isLoading === true) {
         return (
-            <p>LOADING</p>
+            <Loading />
         )
     }
 
